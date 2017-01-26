@@ -8,21 +8,33 @@ function BasicCard(front, back) {
 };
 
 var basiccard = new BasicCard("... was the first president of the United States.", "George Washington");
-console.log(basiccard);
+console.log(basiccard.front + basiccard.back + "\n");
 
 
 function ClozeCard(text, cloze) {
-    this.text = text;
     this.cloze = cloze;
+    console.log("cloze: " + cloze);
+    if(!cloze || text.indexOf(cloze) == -1) {
+        
+        this.error = "Undefined";
+    } else {
+        this.full_text = text;
+        this.answer_text = cloze;
+        this.partial_text = text.replace(cloze, "...");
+    }; 
 };
 
-ClozeCard.prototype.deleted = function () {
-     return this.text.replace(cloze, "..." );
-};
-var clozecard = new ClozeCard("John Adams was the second president of the United States.", deleted);
-var clozecard02 = new ClozeCard("John Adams was the second president of the United States.", partial);
-var clozecard03 = new ClozeCard("John Adams was the second president of the United States.", full);
-var clozecard04 = new ClozeCard("John Adams was the second president of the United States.", null);
+ClozeCard.prototype.full_text = "";
+ClozeCard.prototype.answer_text = "";
+ClozeCard.prototype.partial_text = "";
+
+var clozecard01 = new ClozeCard("John Adams was the second president of the United States.", "John Adams");
+var clozecard02 = new ClozeCard("George Washington was the first president of the United States.", "Ge0rge W4shington");
+var clozecard03 = new ClozeCard("Foo foo");
+
+console.log("card 1: " + " full: " + clozecard01.full_text + " partial: " + clozecard01.partial_text + clozecard01.error + "\n");
+console.log("card 2: " + clozecard02.error + "\n");
+console.log("card 3: " + clozecard03.error + "\n");
 
 /*
 Create a `ClozeCard` constructor. It should accept `text` and `cloze` arguments.
