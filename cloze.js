@@ -7,14 +7,23 @@ function BasicCard(front, back) {
     this.back = back;
 };
 
-var basiccard = new basicCard();
+var basiccard = new BasicCard("... was the first president of the United States.", "George Washington");
+console.log(basiccard);
+
 
 function ClozeCard(text, cloze) {
     this.text = text;
     this.cloze = cloze;
 };
 
-ClozeCard.prototype.
+ClozeCard.prototype.deleted = function () {
+     return this.text.replace(cloze, "..." );
+};
+var clozecard = new ClozeCard("John Adams was the second president of the United States.", deleted);
+var clozecard02 = new ClozeCard("John Adams was the second president of the United States.", partial);
+var clozecard03 = new ClozeCard("John Adams was the second president of the United States.", full);
+var clozecard04 = new ClozeCard("John Adams was the second president of the United States.", null);
+
 /*
 Create a `ClozeCard` constructor. It should accept `text` and `cloze` arguments.
 
@@ -110,4 +119,3 @@ function clozeCard() {
         });
     };
     */
-};
