@@ -1,14 +1,14 @@
 [
   {
-    "answer": "George Washington",
-    "text": "was the first president of the United States."
+    "text": "was the first president of the United States.",
+    "answer": "George Washington"
   },
   {
-    "answer": "John Adams",
-    "text": "was the second president of the United States."
+    "text": "was the second president of the United States.",
+    "answer": "John Adams"
   },
   {
-    "answer": "Thomas Jefferson",
-    "text": "was the third president of the United States."
+    "text": "was the third president of the United States.",
+    "answer": "Thomas Jefferson"
   }
 ]
