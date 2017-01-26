@@ -2,6 +2,33 @@ var fs = require('fs');
 var inquirer = require('inquirer');
 var cloze = require('./cloze.json');
 
+function BasicCard(front, back) {
+    this.front = front;
+    this.back = back;
+};
+
+var basiccard = new basicCard();
+
+function ClozeCard(text, cloze) {
+    this.text = text;
+    this.cloze = cloze;
+};
+
+ClozeCard.prototype.
+/*
+Create a `ClozeCard` constructor. It should accept `text` and `cloze` arguments.
+
+    * `ClozeCard` should have a property or method that contains or returns *only* the cloze-deleted portion of the text.
+
+    * `ClozeCard` should have a property or method that contains or returns *only* the partial text.
+
+    * `ClozeCard` should have a property or method that contains or returns *only* the full text.
+
+    * `ClozeCard` should throw or log an error when the cloze deletion does *not* appear in the input text.
+
+    * Try to use Prototypes to equip all `ClozeCard`s with a method that displays the full text.
+*/
+/*
 clozeCard();
 
 function clozeCard() {
@@ -9,10 +36,12 @@ function clozeCard() {
     var questions = []; //init
     var keys = Object.keys(cloze);
     for (i=0; i < keys.length; i++) {
-        var question = cloze[keys[i]];
-        console.log(/*JSON.stringify(*/question.answer/*)*/);
+        var question_json = cloze[keys[i]];
+        var question = {}; //init
+        console.log(question_json.text);
+        console.log(question_json.answer);
     };
-
+*/
 /*
     for (i=0; i < keys.length; i++) {
         var question = cloze[keys[i]];
